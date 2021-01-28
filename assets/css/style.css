@@ -16,7 +16,7 @@ h1, h2, h3, h4, h5, h6 {
     right: 0;
     z-index: 1000;
 
-    padding-top: 30px; /*отступ сверху*/
+    padding-top: 30px;
 }
 
 .header__logo {
@@ -28,9 +28,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .header__inner {
-    display: flex; /*разнести элементы - лого слева и навигация справа*/
-    justify-content: space-between; /*как распределяются элементы относительно главной оси flex. В данном случае - элементы займут крайние позиции слева и справа*/
-    align-items: center; /*выравнивание навигации по центру по вертикали относительно логотипа*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .header__link {
@@ -50,13 +50,12 @@ h1, h2, h3, h4, h5, h6 {
 
 /*Intro*/
 .intro {
-    /*чтобы элементы заголовок и над ним заголовок были по центру*/
     display: flex;
     flex-direction: column;
     justify-content: center;
 
     width: 100%;
-    height: 100vh; /*100 процентов высоты пользователя*/
+    height: 100vh;
     background: url("../images/intro.jpg") center no-repeat;
     background-size: cover;
     opacity: 0.55;
@@ -64,7 +63,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .intro__img {
-    /*чтобы элементы заголовок и над ним заголовок были по центру*/
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -72,7 +70,7 @@ h1, h2, h3, h4, h5, h6 {
     position: absolute;
 
     width: 100%;
-    height: 100vh; /*100 процентов высоты пользователя*/
+    height: 100vh; 
     background: url("../images/login.jpg") center no-repeat;
     background-size: cover;
     opacity: 0.35;
@@ -86,7 +84,7 @@ h1, h2, h3, h4, h5, h6 {
 .nav__link {
     font-family: 'Playfair Display', serif;
     font-size: 25px;
-    color: #302d34;
+    color: #800032;
 
     display: inline-block;
     vertical-align: top;
@@ -97,7 +95,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav__link:hover {
-    color: #800032;
+    color: #282828;
 }
 
 /*Form*/
@@ -145,8 +143,10 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 4px;
     border: 1px solid #a00032;
     padding: 6px 12px 8px;
-    margin-top: 8px;
+    /*margin-top: 8px;*/
     cursor: pointer;
+    display:block;
+    margin:8px auto;
 }
 
 .btn__login:hover {

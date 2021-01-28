@@ -1,3 +1,23 @@
+<?php
+if (!empty($_POST)) {
+    require __DIR__ . '/auth.php';
+
+    $login = $_POST['login'] ?? '';
+    $password = $_POST['password'] ?? '';
+
+    if (checkAuth($login, $password)) {
+        setcookie('login', $login, 0, '/');
+        setcookie('password', $password, 0, '/');
+        header('Location: /site_with_tests/index.php');
+    } else {
+        $error = 'Ошибка авторизации';
+    }
+}
+$loginFromCookie = $_COOKIE['login'] ?? '';
+if ($loginFromCookie !== '') {
+    header('Location: /site_with_tests/index.php');
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,22 +41,26 @@
 </header>
 <div class="intro__login">
     <div class="container__login">
-        <div class="intro__img">
-
-        </div>
+        <div class="intro__img"></div>
         <div class="form">
             <form action="/site_with_tests/login.php" method="post">
-                <label class="label">Логин</label>
+                <label class="label">Login</label>
                 <input type="text" name="login">
                 <br>
-                <label class="label">Пароль</label>
+                <label class="label">Password</label>
                 <input type="password" name="password">
                 <br>
-                <input class="btn__login" type="submit" value="Войти">
+                <input class="btn__login" type="submit" value="Log in">
             </form>
         </div>
     </div>
 </div>
 </div>
+<?php if (isset($error)): ?>
+    <script>
+        let err = '<?php echo $error;?>';
+        alert(err);
+    </script>
+<?php endif; ?>
 </body>
 </html>
