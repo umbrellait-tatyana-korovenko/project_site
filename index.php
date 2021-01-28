@@ -17,16 +17,20 @@
                     </a>
                 </div>
                 <nav class="nav">
+                    <?php
+                    $loginFromCookie = $_COOKIE['login'] ?? '';
+                    if ($loginFromCookie === ''): ?>
                     <a class="nav__link" href="/site_with_tests/login.php">Log in</a>
-                    <a class="nav__link" href="#">Sign in</a>
+                    <!--<a class="nav__link" href="#">Sign in</a>-->
+                    <?php else: ?>
+                    <a class="nav__link" href="/site_with_tests/logout.php">Log out</a>
+                    <?php endif; ?>
                 </nav>
             </div>
         </div>
     </header>
     <div class="intro">
-        <div class="container">
-
-        </div>
+        <div class="container"></div>
     </div>
 </body>
 </html>
